@@ -68,7 +68,7 @@ def classify_images(images_dir, results_dic, model):
     """
 
     for filename in results_dic:
-        # creat full path of image
+        # create full path of image
         image_path = images_dir + "/" + filename
         # call classifier to get the classifier label
         model_label = classifier(image_path, model)
@@ -77,10 +77,12 @@ def classify_images(images_dir, results_dic, model):
 
         # get pet label
         pet_label = results_dic[filename][0]
-        match = 1 if pet_label in model_label else 0
+
+        # split model label by comma, strip spaces
+        model_label_list = [label.strip() for label in model_label.split(',')]
+
+        # check for exact match in classifier label list
+        match = 1 if pet_label in model_label_list else 0
 
         # add to results dictionary
         results_dic[filename].extend([model_label, match])
-
-
-# no return needed

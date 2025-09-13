@@ -68,12 +68,10 @@ def calculates_results_stats(results_dic):
                      and the classroom Item XX Calculating Results for details
                      on how to calculate the counts and statistics.
     """
-    # Replace None with the results_stats_dic dictionary that you created with
-    # this function
-
+    # Initialize results_stats dictionary
     results_stats = {}
 
-    # initialization
+    # Initialization
     results_stats["n_images"] = len(results_dic)
     results_stats["n_dogs_img"] = 0
     results_stats["n_notdogs_img"] = 0
@@ -82,33 +80,34 @@ def calculates_results_stats(results_dic):
     results_stats["n_correct_notdogs"] = 0
     results_stats["n_correct_breed"] = 0
 
-    # caluclation
-
+    # Calculation loop
     for key in results_dic:
-        pet_label, classifier_label, match, is_pet_dog, is_classifier_dog = results_dic[
-            key
-        ]
+        pet_label, classifier_label, match, is_pet_dog, is_classifier_dog = results_dic[key]
 
+        # Counting dogs and non-dogs
         if is_pet_dog:
             results_stats["n_dogs_img"] += 1
         else:
             results_stats["n_notdogs_img"] += 1
 
+        # Counting matches
         if match:
             results_stats["n_match"] += 1
 
+        # Correctly classified dogs
         if is_pet_dog and is_classifier_dog:
             results_stats["n_correct_dogs"] += 1
 
+        # Correctly classified non-dogs
         if not is_pet_dog and not is_classifier_dog:
             results_stats["n_correct_notdogs"] += 1
 
+        # Correct breed classification
         if is_pet_dog and match:
             results_stats["n_correct_breed"] += 1
 
-    results_stats["pct_match"] = (
-        results_stats["n_match"] / results_stats["n_images"]
-    ) * 100
+    # Calculate percentages with zero-division check
+    results_stats["pct_match"] = (results_stats["n_match"] / results_stats["n_images"]) * 100
     results_stats["pct_correct_dogs"] = (
         (results_stats["n_correct_dogs"] / results_stats["n_dogs_img"]) * 100
         if results_stats["n_dogs_img"] > 0
@@ -125,4 +124,5 @@ def calculates_results_stats(results_dic):
         else 0
     )
 
+    # Return the statistics dictionary
     return results_stats

@@ -48,7 +48,7 @@ def get_pet_labels(image_dir):
     results_dic = {}
 
     for filename in filenames:
-        if filename.startWith("."):
+        if filename.startswith("."):
             continue
         # get fileName without extension
         pet_label = filename.lower().split(".")[0]

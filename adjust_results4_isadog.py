@@ -16,7 +16,7 @@
 #          is of-a-dog, otherwise the label isn't of a dog. Alternatively one
 #          could also read all the dog names into a list and then if the label
 #          is found to exist within this list - the label is of-a-dog, otherwise
-#          the label isn't of a dog.
+#          the label isn't a dog.
 #         This function inputs:
 #            -The results dictionary as results_dic within adjust_results4_isadog
 #             function and results for the function call within main.
@@ -29,8 +29,8 @@
 #           the item at index 4 of the list. Note we recommend setting the values
 #           at indices 3 & 4 to 1 when the label is of-a-dog and to 0 when the
 #           label isn't a dog.
-#
 ##
+
 # TODO 4: Define adjust_results4_isadog function below, specifically replace the None
 #       below by the function definition of the adjust_results4_isadog function.
 #       Notice that this function doesn't return anything because the
@@ -75,19 +75,18 @@ def adjust_results4_isadog(results_dic, dogfile):
             dognames_set.add(line.strip().lower())
 
     for filename in results_dic:
-        pet_label = results_dic[filename][0]
-        classifier_label = results_dic[filename][1]
+        pet_label = results_dic[filename][0].lower()
+        classifier_label = results_dic[filename][1].lower()
 
         # determine if pet_label is a dog
-        if pet_label in dognames_set:
-            pet_is_dog = 1
-        else:
-            pet_is_dog = 0
+        pet_is_dog = 1 if pet_label in dognames_set else 0
 
-        # determine if classifier_label is a dog
-    is_classifier_dog = (
-        1 if any(dog in classifier_label.split(", ") for dog in dognames_set) else 0
-    )
-    
-    # add to results dictionary
-    results_dic[filename].extend([pet_is_dog, is_classifier_dog])
+        # determine if any classifier label is a dog
+        classifier_is_dog = 0
+        for name in classifier_label.split(","):
+            if name.strip() in dognames_set:
+                classifier_is_dog = 1
+                break
+
+        # add to results dictionary
+        results_dic[filename].extend([pet_is_dog, classifier_is_dog])
