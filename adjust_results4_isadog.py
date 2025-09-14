@@ -37,6 +37,8 @@
 #       results_dic dictionary that is passed into the function is a mutable
 #       data type so no return is needed.
 #
+import re
+
 def adjust_results4_isadog(results_dic, dogfile):
     """
     Adjusts the results dictionary to determine if classifier correctly
@@ -75,16 +77,23 @@ def adjust_results4_isadog(results_dic, dogfile):
             dognames_set.add(line.strip().lower())
 
     for filename in results_dic:
+        # clean pet_label (remove numbers + strip + lower)
         pet_label = results_dic[filename][0].lower()
+        pet_label_clean = re.sub(r'\d+', '', pet_label).strip()
+
+        # clean classifier_label (split by comma, clean each)
         classifier_label = results_dic[filename][1].lower()
+        classifier_names = [
+            re.sub(r'\d+', '', name).strip() for name in classifier_label.split(",")
+        ]
 
         # determine if pet_label is a dog
-        pet_is_dog = 1 if pet_label in dognames_set else 0
+        pet_is_dog = 1 if pet_label_clean in dognames_set else 0
 
         # determine if any classifier label is a dog
         classifier_is_dog = 0
-        for name in classifier_label.split(","):
-            if name.strip() in dognames_set:
+        for name in classifier_names:
+            if name in dognames_set:
                 classifier_is_dog = 1
                 break
 
