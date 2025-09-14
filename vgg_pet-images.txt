@@ -18,8 +18,6 @@ Below are 10 of them:
 
      MATCH:
 
- NOT A MATCH:
-
              Basenji_00963.jpg: 
 Real:              basenji 00963   Classifier:                        basenji
 
@@ -35,9 +33,6 @@ Real:               beagle 01125   Classifier:                         beagle
               Beagle_01141.jpg: 
 Real:               beagle 01141   Classifier:                         beagle
 
-              Beagle_01170.jpg: 
-Real:               beagle 01170   Classifier:  walker hound, walker foxhound
-
       Boston_terrier_02259.jpg: 
 Real:       boston terrier 02259   Classifier:    boston bull, boston terrier
 
@@ -49,9 +44,6 @@ Real:       boston terrier 02303   Classifier:    boston bull, boston terrier
 
                Boxer_02426.jpg: 
 Real:                boxer 02426   Classifier:                          boxer
-
-                    cat_01.jpg: 
-Real:                     cat 01   Classifier:                           lynx
 
                     cat_02.jpg: 
 Real:                     cat 02   Classifier:          tabby, tabby cat, cat
@@ -80,9 +72,6 @@ Real:            fox squirrel 01   Classifier: fox squirrel, eastern fox squirre
                   gecko_02.jpg: 
 Real:                   gecko 02   Classifier:            banded gecko, gecko
 
-                  gecko_80.jpg: 
-Real:                   gecko 80   Classifier: tailed frog, bell toad, ribbed toad, tailed toad, ascaphus trui
-
  German_shepherd_dog_04890.jpg: 
 Real:  german shepherd dog 04890   Classifier: german shepherd, german shepherd dog, german police dog, alsatian
 
@@ -106,12 +95,6 @@ Real:     golden retriever 05257   Classifier:               golden retriever
 
           Great_dane_05320.jpg: 
 Real:           great dane 05320   Classifier:                     great dane
-
-       great_horned_owl_02.jpg: 
-Real:        great horned owl 02   Classifier: ruffed grouse, partridge, bonasa umbellus
-
-      Great_pyrenees_05367.jpg: 
-Real:       great pyrenees 05367   Classifier:                         kuvasz
 
       Great_pyrenees_05435.jpg: 
 Real:       great pyrenees 05435   Classifier:                 great pyrenees
@@ -140,11 +123,26 @@ Real:        saint bernard 08036   Classifier:      saint bernard, st bernard
                  skunk_029.jpg: 
 Real:                  skunk 029   Classifier:     skunk, polecat, wood pussy
 
-# Total Images 40 # Matches: 0 # NOT Matches: 40
+ NOT A MATCH:
+
+              Beagle_01170.jpg: 
+Real:               beagle 01170   Classifier:  walker hound, walker foxhound
+
+                    cat_01.jpg: 
+Real:                     cat 01   Classifier:                           lynx
+
+                  gecko_80.jpg: 
+Real:                   gecko 80   Classifier: tailed frog, bell toad, ribbed toad, tailed toad, ascaphus trui
+
+       great_horned_owl_02.jpg: 
+Real:        great horned owl 02   Classifier: ruffed grouse, partridge, bonasa umbellus
+
+      Great_pyrenees_05367.jpg: 
+Real:       great pyrenees 05367   Classifier:                         kuvasz
+
+# Total Images 40 # Matches: 35 # NOT Matches: 5
 
      MATCH:
-
- NOT A MATCH:
 
              Basenji_00963.jpg: 
 Real:              basenji 00963   Classifier:                        basenji  
@@ -166,10 +164,6 @@ PetLabelDog: 1  ClassLabelDog: 1
 Real:               beagle 01141   Classifier:                         beagle  
 PetLabelDog: 1  ClassLabelDog: 1
 
-              Beagle_01170.jpg: 
-Real:               beagle 01170   Classifier:  walker hound, walker foxhound  
-PetLabelDog: 1  ClassLabelDog: 1
-
       Boston_terrier_02259.jpg: 
 Real:       boston terrier 02259   Classifier:    boston bull, boston terrier  
 PetLabelDog: 1  ClassLabelDog: 1
@@ -185,10 +179,6 @@ PetLabelDog: 1  ClassLabelDog: 1
                Boxer_02426.jpg: 
 Real:                boxer 02426   Classifier:                          boxer  
 PetLabelDog: 1  ClassLabelDog: 1
-
-                    cat_01.jpg: 
-Real:                     cat 01   Classifier:                           lynx  
-PetLabelDog: 0  ClassLabelDog: 0
 
                     cat_02.jpg: 
 Real:                     cat 02   Classifier:          tabby, tabby cat, cat  
@@ -226,10 +216,6 @@ PetLabelDog: 0  ClassLabelDog: 0
 Real:                   gecko 02   Classifier:            banded gecko, gecko  
 PetLabelDog: 0  ClassLabelDog: 0
 
-                  gecko_80.jpg: 
-Real:                   gecko 80   Classifier: tailed frog, bell toad, ribbed toad, tailed toad, ascaphus trui  
-PetLabelDog: 0  ClassLabelDog: 0
-
  German_shepherd_dog_04890.jpg: 
 Real:  german shepherd dog 04890   Classifier: german shepherd, german shepherd dog, german police dog, alsatian  
 PetLabelDog: 1  ClassLabelDog: 1
@@ -260,14 +246,6 @@ PetLabelDog: 1  ClassLabelDog: 1
 
           Great_dane_05320.jpg: 
 Real:           great dane 05320   Classifier:                     great dane  
-PetLabelDog: 1  ClassLabelDog: 1
-
-       great_horned_owl_02.jpg: 
-Real:        great horned owl 02   Classifier: ruffed grouse, partridge, bonasa umbellus  
-PetLabelDog: 0  ClassLabelDog: 0
-
-      Great_pyrenees_05367.jpg: 
-Real:       great pyrenees 05367   Classifier:                         kuvasz  
 PetLabelDog: 1  ClassLabelDog: 1
 
       Great_pyrenees_05435.jpg: 
@@ -306,15 +284,37 @@ PetLabelDog: 1  ClassLabelDog: 1
 Real:                  skunk 029   Classifier:     skunk, polecat, wood pussy  
 PetLabelDog: 0  ClassLabelDog: 0
 
-# Total Images 40 # Matches: 0 # NOT Matches: 40
+ NOT A MATCH:
+
+              Beagle_01170.jpg: 
+Real:               beagle 01170   Classifier:  walker hound, walker foxhound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    cat_01.jpg: 
+Real:                     cat 01   Classifier:                           lynx  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                  gecko_80.jpg: 
+Real:                   gecko 80   Classifier: tailed frog, bell toad, ribbed toad, tailed toad, ascaphus trui  
+PetLabelDog: 0  ClassLabelDog: 0
+
+       great_horned_owl_02.jpg: 
+Real:        great horned owl 02   Classifier: ruffed grouse, partridge, bonasa umbellus  
+PetLabelDog: 0  ClassLabelDog: 0
+
+      Great_pyrenees_05367.jpg: 
+Real:       great pyrenees 05367   Classifier:                         kuvasz  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 40 # Matches: 35 # NOT Matches: 5
 
  ** Statistics from calculates_results_stats() function:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
-Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  93.3
 
  ** Check Statistics - calculated from this function as a check:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
-Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  93.3
 
 
 *** Results Summary for CNN Model Architecture VGG ***
@@ -324,8 +324,8 @@ Number of "Not-a" Dog Images  :  10
 
 % Correct Results:
 Correctly Classified Dogs     : 100.0
-Correctly Classified Breed    : 0.0
+Correctly Classified Breed    : 93.3
 Correctly Classified "Not-a" Dog: 100.0
-Matches Between Labels        : 0.0
+Matches Between Labels        : 87.5
 
-** Total Elapsed Runtime: 0:0:19
+** Total Elapsed Runtime: 0:0:14
