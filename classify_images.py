@@ -22,6 +22,7 @@
 ##
 # Imports classifier function for using CNN to classify images
 from classifier import classifier
+import re
 
 
 # TODO 3: Define classify_images function below, specifically replace the None
@@ -77,12 +78,13 @@ def classify_images(images_dir, results_dic, model):
 
         # get pet label
         pet_label = results_dic[filename][0]
+        clean_pet_label = re.sub(r'\d+', '', pet_label).strip()
 
         # split model label by comma, strip spaces
         model_label_list = [label.strip() for label in model_label.split(',')]
 
         # check for exact match in classifier label list
-        match = 1 if pet_label in model_label_list else 0
+        match = 1 if clean_pet_label in model_label_list else 0
 
         # add to results dictionary
         results_dic[filename].extend([model_label, match])
